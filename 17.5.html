@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Rat{
+        constructor(name,khoiluong,trangthai,tocdo) {
+            this.name = name;
+            this.khoiluongRat = khoiluong;
+            this.tocdoRat = tocdo;
+            this.trangthai = trangthai;
+        }
+        getNameRat(){return this.name}
+        getKhoiluongRat(){return this.khoiluongRat}
+        getTocdoRat(){return this.tocdoRat}
+        getTrangthaiRat(){
+            if (this.trangthai){
+                alert("Chuot song")
+            }else {
+                alert("Chuot chet")
+            }
+        }
+        getkeu(string){
+            console.log(string)
+        }
+    }
+
+    class Cat{
+        name;khoiluong;tocdoma;
+        constructor(name,khoiluong,tocdoma,chuot) {
+            this.name = name;
+            this.khoiluong= khoiluong;
+            this.tocdoma = tocdoma
+            this.chuot = chuot;
+        }
+        getName(){return this.name}
+        getKhoiluong(){return this.khoiluong}
+        getTocdo(){return this.tocdoma}
+        getBat(){
+            if (this.chuot.tocdoRat<this.tocdoma){
+                alert("Da bat dc chuot")
+            }else {
+                alert("CHua dc")
+            }
+        }
+        eatTheMouse() {
+            if (this.chuot.trangthai) {
+                this.khoiluong = this.khoiluong +  this.chuot.khoiluongRat;
+                alert("Chuột đã bị mèo ăn");
+            }
+        }
+    }
+    let Mickey = new Rat("Rat", 10, 100);
+    let Tom = new Cat("Tom", 20, 200, Rat);
+
+
+    Tom.getBat(Mickey);
+    Tom.eatTheMouse();
+    console.log();
+</script>
